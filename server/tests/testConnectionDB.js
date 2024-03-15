@@ -1,6 +1,6 @@
 require('dotenv').config();
 const { MongoClient } = require('mongodb');
-const logger = require('../../utils/logger')
+const logger = require('../utils/logger')
 
 // Replace 'your_connection_string' with your actual connection string.
 const uri = process.env.DATABASE_URL; 
