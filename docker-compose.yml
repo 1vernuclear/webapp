@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: dockerfile
+    ports:
+      - "8080:localhost" # Replace with actual ports
+    networks:
+      - your-network
+
+  frontend:
+    build:
+      context: ./client
+      dockerfile: dockerfile
+    ports:
+      - "8080:localhost" # Replace with actual ports
+    networks:
+      - your-network
+
+networks:
+  your-network:
+    driver: bridge
