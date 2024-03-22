@@ -2,7 +2,7 @@ require('dotenv').config();
 const { MongoClient } = require('mongodb');
 
 // Replace 'your_connection_string' with your actual connection string.
-const uri = process.env.DATABASE_URL;
+const uri = process.env.DATABASE_URI;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function fetchProduct() {

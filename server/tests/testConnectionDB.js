@@ -3,7 +3,7 @@ const { MongoClient } = require('mongodb');
 const logger = require('../utils/logger')
 
 // Replace 'your_connection_string' with your actual connection string.
-const uri = process.env.DATABASE_URL; 
+const uri = process.env.DATABASE_URI; 
 
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
