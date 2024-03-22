@@ -15,11 +15,18 @@ console.log(fileName);
 async function insertDocuments(db) {
   // Collection name
   const collection = db.collection('testCollection');
+
+  // Wipe all documents from the collection
+  await collection.deleteMany({});
+
   // Read the JSON file
   const fileData = fs.readFileSync(fileName);
-  const documents = JSON.parse(fileData);
+  let documents = JSON.parse(fileData);
 
-  // Insert documents into collection
+  // Set the quantity of each product to 50
+  documents = documents.map(doc => ({ ...doc, quantity: 50 }));
+
+  // Insert modified documents into collection
   const insertResult = await collection.insertMany(documents);
   console.log('Inserted documents:', insertResult.insertedCount);
 }
