@@ -5,7 +5,7 @@ services:
       context: ./server
       dockerfile: dockerfile
     ports:
-      - "8080:localhost" # Replace with actual ports
+      - "8080:3000" # Replace with actual ports
     networks:
       - your-network
 
@@ -14,7 +14,7 @@ services:
       context: ./client
       dockerfile: dockerfile
     ports:
-      - "8080:localhost" # Replace with actual ports
+      - "3001:3002" # Replace with actual ports
     networks:
       - your-network
 
